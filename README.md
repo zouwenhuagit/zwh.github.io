@@ -175,7 +175,7 @@ tags:
 
 ```html
 <li class="post-item">
-  <a href="/zwh.github.io/posts/your-article.html">文章标题</a>
+  <a href="/zwh.github.io/posts/your-new-article.html">文章标题</a>
   <div class="post-meta">
     <span class="date">📅 2026-09-07</span>
     <div class="tags">
