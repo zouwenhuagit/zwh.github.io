@@ -124,7 +124,7 @@ npm install
 npm run dev
 ```
 
-访问 http://localhost:5173/zwh.github.io/
+访问 `http://localhost:5173/zwh.github.io/`
 
 ### 构建生产版本
 
