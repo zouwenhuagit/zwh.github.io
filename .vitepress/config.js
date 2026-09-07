@@ -4,6 +4,7 @@ export default defineConfig({
   title: 'WebKiss Blog',
   description: '个人技术博客',
   base: '/zwh.github.io/',
+  ignoreDeadLinks: true,
   
   themeConfig: {
     logo: {
