@@ -6,7 +6,11 @@ export default defineConfig({
   base: '/zwh.github.io/',
   
   themeConfig: {
-    logo: '/logo.png',
+    logo: {
+      src: '/logo.png',
+      alt: 'WebKiss Blog',
+      height: 36
+    },
     
     nav: [
       { text: '首页', link: '/' },
