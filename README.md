@@ -124,7 +124,7 @@ npm install
 npm run dev
 ```
 
-访问  "http://localhost:5173/zwh.github.io/"
+访问 `http://localhost:5173/zwh.github.io/`
 
 ### 构建生产版本
 
@@ -150,7 +150,7 @@ git commit -m "update content"
 git push origin main
 ```
 
-部署完成后访问："https://zouwenhuagit.github.io/zwh.github.io/"
+部署完成后访问：https://zouwenhuagit.github.io/zwh.github.io/
 
 ## 添加新文章
 
@@ -175,7 +175,7 @@ tags:
 
 ```html
 <li class="post-item">
-  <a href="/zwh.github.io/posts/your-article.html">文章标题</a>
+  <a href="/zwh.github.io/posts/your-new-article.html">文章标题</a>
   <div class="post-meta">
     <span class="date">📅 2026-09-07</span>
     <div class="tags">
