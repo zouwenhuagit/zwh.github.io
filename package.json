@@ -1,0 +1,14 @@
+{
+  "name": "zwh-blog",
+  "version": "1.0.0",
+  "description": "个人博客",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
