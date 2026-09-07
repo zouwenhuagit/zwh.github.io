@@ -8,8 +8,7 @@ export default defineConfig({
   themeConfig: {
     logo: {
       src: '/logo.png',
-      alt: 'WebKiss Blog',
-      height: 36
+      alt: 'WebKiss Blog'
     },
     
     nav: [

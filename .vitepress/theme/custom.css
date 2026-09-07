@@ -1,0 +1,7 @@
+/* Logo 尺寸控制 */
+.VPNav .logo img {
+  height: 36px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
