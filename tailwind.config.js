@@ -3,6 +3,22 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,ts}'],
   theme: {
+    // 容器：居中，版心最大 1152px；内边距随断点增大
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '1.5rem',
+        lg: '2rem',
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1152px',
+        '2xl': '1152px',
+      },
+    },
     extend: {
       colors: {
         background: '#0a0a0f',
@@ -38,16 +54,6 @@ export default {
         slideUp: 'slideUp 0.6s ease-out both',
         countUp: 'countUp 0.8s ease-out both',
       },
-    },
-  },
-  container: {
-    center: true,
-    padding: '1rem',
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1152px',
     },
   },
   plugins: [],

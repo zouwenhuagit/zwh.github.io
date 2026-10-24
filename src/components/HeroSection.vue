@@ -71,7 +71,7 @@ store.fetchUser()
 
       <!-- 问候语 -->
       <p class="animate-slideUp animate-delay-100 text-primary font-mono text-sm md:text-base mb-4 tracking-widest">
-        你好，我是 zouwenhuagit
+        你好，我是 wenger
       </p>
 
       <!-- 主标题 + 打字机 -->
