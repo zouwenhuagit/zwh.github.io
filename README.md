@@ -2,7 +2,7 @@
 
 zouwenhuagit 的个人开发者博客，基于 Vue 3 + TypeScript + Vite 构建，部署于 GitHub Pages。包含文章、项目展示与 GitHub 数据统计，界面为深色开发者风格。
 
-在线访问：https://zouwenhuagit.github.io/hello--world/
+在线访问：https://zouwenhuagit.github.io/zwh.github.io/
 
 ## 技术栈
 
@@ -68,7 +68,7 @@ personal-blog-vue/
 │   ├── router/index.ts            # 路由配置
 │   ├── types/index.ts             # TS 类型定义
 │   └── utils/                     # api.ts（GitHub API）、format.ts（格式化）
-├── vite.config.ts                 # base: '/hello--world/'，@ 别名指向 src
+├── vite.config.ts                 # base: '/zwh.github.io/'，@ 别名指向 src
 └── tailwind.config.js
 ```
 
@@ -96,39 +96,5 @@ personal-blog-vue/
 
 ## 相关链接
 
-- 博客仓库：https://github.com/zouwenhuagit/hello--world
+- 博客仓库：https://github.com/zouwenhuagit/zwh.github.io
 - GitHub 主页：https://github.com/zouwenhuagit
-
-
-<!-- 
-基于 VitePress 构建的个人技术博客。
-
-## 从 Hero + Features 到 VitePress
-
-### 什么是 Hero + Features？
-
-Hero + Features 是 VitePress 提供的首页布局模式，通过 frontmatter 配置即可生成现代化的落地页：
-
-## 部署
-
-项目使用 GitHub Actions 自动部署到 GitHub Pages。
-
-推送代码到 `main` 分支即可触发自动部署：
-
-```bash
-git add .
-git commit -m "update content"
-git push origin main
-```
-
-部署完成后访问：https://zouwenhuagit.github.io/zwh.github.io/
-
-## 技术栈
-
-- **VitePress** - 静态站点生成器
-- **Vue 3** - 前端框架
-- **GitHub Pages** - 托管服务
-- **GitHub Actions** - CI/CD
-
-## License
- -->
