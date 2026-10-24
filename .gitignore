@@ -1,31 +1,18 @@
-# Dependencies
-node_modules
-.pnp
-.pnp.js
+# 依赖
+node_modules/
 
-# Build output
-.vitepress/dist
-.vitepress/cache
+# 构建产物（由 GitHub Actions 在云端构建，无需提交）
+dist/
 
-# Logs
+# 日志
 *.log
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+# 编辑器与系统文件
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
-
-# Environment variables
-.env
-.env.local
-.env.*.local
+.DS_Store

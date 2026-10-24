@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== 基础层：全局深色主题、滚动条、文字选中 ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-gray-100 font-sans antialiased;
+  }
+
+  /* 文字选中：primary 半透明高亮 */
+  ::selection {
+    @apply bg-primary/30 text-white;
+  }
+
+  /* 自定义滚动条：深色细滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted;
+  }
+}
+
+/* ===== 组件层：卡片发光、渐变文字、主按钮、导航链接 ===== */
+@layer components {
+  /* 卡片：深色表面 + 边框，hover 时上浮并泛出 primary 光晕 */
+  .card-glow {
+    @apply bg-surface border border-border rounded-xl transition-all duration-300;
+  }
+  .card-glow:hover {
+    @apply border-primary/50 -translate-y-1;
+    box-shadow: 0 8px 30px rgba(0, 212, 170, 0.15);
+  }
+
+  /* 渐变文字：primary → accent */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* 主按钮：primary 底、深色文字，hover 加深并投射光晕 */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+      bg-primary text-background font-medium transition-all duration-300
+      hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/25 active:scale-95;
+  }
+
+  /* 描边按钮：透明底 + 边框，hover 时泛出 primary 光晕 */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+      border border-border text-muted-light transition-all duration-300
+      hover:border-primary/60 hover:text-primary active:scale-95;
+  }
+
+  /* 导航链接：hover/激活时底部滑入 primary 下划线 */
+  .nav-link {
+    @apply relative text-muted-light transition-colors duration-200 hover:text-white;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-primary transition-all duration-300;
+  }
+  .nav-link:hover::after,
+  .nav-link.router-link-active::after {
+    @apply w-full;
+  }
+  .nav-link.router-link-active {
+    @apply text-white;
+  }
+
+  /* 标签 pill：小圆角胶囊 */
+  .tag-pill {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs
+      bg-surface-light text-muted-light border border-border
+      transition-colors duration-200;
+  }
+  .tag-pill-active {
+    @apply bg-primary text-background border-primary font-medium;
+  }
+}
+
+/* ===== 工具层：动画延迟工具类（用于交错入场） ===== */
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* ===== Markdown 渲染样式（复刻 React 版 MarkdownRenderer） ===== */
+.markdown-body {
+  @apply text-gray-300 leading-relaxed;
+}
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  @apply text-white font-bold mt-10 mb-4;
+}
+/* 标题下边框分隔线 */
+.markdown-body h1 {
+  @apply text-3xl pb-3 border-b border-border;
+}
+.markdown-body h2 {
+  @apply text-2xl pb-2 border-b border-border;
+}
+.markdown-body h3 {
+  @apply text-xl;
+}
+.markdown-body h4 {
+  @apply text-lg;
+}
+.markdown-body p {
+  @apply my-4;
+}
+.markdown-body a {
+  @apply text-primary hover:underline break-all;
+}
+/* 列表 */
+.markdown-body ul {
+  @apply list-disc pl-6 my-4 space-y-1;
+}
+.markdown-body ol {
+  @apply list-decimal pl-6 my-4 space-y-1;
+}
+/* 引用块：左侧 primary 边框 + 浅色底 */
+.markdown-body blockquote {
+  @apply border-l-4 border-primary bg-surface-light/60 pl-4 pr-3 py-1 my-4 rounded-r-lg text-muted-light;
+}
+.markdown-body blockquote p {
+  @apply my-1;
+}
+/* 行内 code：primary 药丸样式 */
+.markdown-body :not(pre) > code {
+  @apply bg-primary/10 text-primary px-1.5 py-0.5 rounded-md text-[0.875em] font-mono;
+}
+/* 代码块：深色表面 + 圆角，顶部预留语言标签条位置 */
+.markdown-body pre {
+  @apply relative bg-surface-light border border-border rounded-xl p-4 pt-8 my-5 overflow-x-auto font-mono text-sm;
+}
+.markdown-body pre code {
+  @apply bg-transparent text-gray-200 p-0 font-mono;
+}
+/* 代码块顶部语言标签条 */
+.markdown-body pre .code-lang {
+  @apply absolute top-0 right-0 px-3 py-1 text-xs font-mono text-primary
+    bg-primary/10 border-b border-l border-border rounded-bl-lg rounded-tr-xl uppercase tracking-wider;
+}
+/* 表格：边框 + 深色表头 */
+.markdown-body table {
+  @apply w-full my-5 border-collapse text-sm;
+}
+.markdown-body th {
+  @apply bg-surface-light text-white font-medium px-3 py-2 border border-border text-left;
+}
+.markdown-body td {
+  @apply px-3 py-2 border border-border;
+}
+.markdown-body tr:nth-child(even) td {
+  @apply bg-surface/60;
+}
+/* 分隔线 */
+.markdown-body hr {
+  @apply my-8 border-border;
+}
+/* 图片 */
+.markdown-body img {
+  @apply rounded-lg my-4 max-w-full;
+}

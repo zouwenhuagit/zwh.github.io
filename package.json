@@ -1,14 +1,29 @@
 {
-  "name": "zwh-blog",
+  "name": "personal-blog-vue",
+  "private": true,
   "version": "1.0.0",
-  "description": "个人博客",
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "highlight.js": "^11.10.0",
+    "lucide-vue-next": "^0.454.0",
+    "markdown-it": "^14.1.0",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "vitepress": "^1.6.3"
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.20.5",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.11"
   }
 }
