@@ -1,11 +1,14 @@
 <script setup lang="ts">
-// 项目页：全仓库按星标降序、双列网格、空状态、骨架屏
+// 项目页：全仓库按星标降序、双列网格、空状态、骨架屏；顶部附带自制游戏入口
 import { onMounted } from 'vue'
-import { PackageOpen } from 'lucide-vue-next'
+import { Gamepad2, Play, PackageOpen } from 'lucide-vue-next'
 import ProjectCard from '@/components/ProjectCard.vue'
 import { useBlogStore } from '@/stores/blog'
 
 const store = useBlogStore()
+
+// 自制游戏页面地址（public/saltline/，随 base 自动拼接）
+const GAME_URL = `${import.meta.env.BASE_URL}saltline/`
 
 onMounted(() => {
   store.fetchRepos()
@@ -19,6 +22,30 @@ onMounted(() => {
       开源<span class="text-gradient">项目</span>
     </h1>
     <p class="text-muted mb-10 animate-fadeIn">来自 GitHub 的公开仓库，按星标数量排序。</p>
+
+    <!-- 自制游戏入口 -->
+    <a
+      :href="GAME_URL"
+      class="card-glow group relative flex flex-col md:flex-row items-start md:items-center gap-5 p-6 mb-10 overflow-hidden animate-fadeIn"
+    >
+      <div class="absolute -top-16 -right-16 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <span class="flex items-center justify-center w-14 h-14 shrink-0 rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
+        <Gamepad2 :size="28" />
+      </span>
+      <div class="flex-1">
+        <div class="flex items-center gap-3">
+          <h2 class="text-xl font-bold text-white">Saltline</h2>
+          <span class="tag-pill">自制游戏</span>
+        </div>
+        <p class="text-muted text-sm mt-2 leading-relaxed">
+          基于 Three.js 的第一人称波次生存射击游戏，含罗盘 HUD、无线电与目标追踪，支持桌面与移动端触控。
+        </p>
+      </div>
+      <span class="btn-primary shrink-0">
+        <Play :size="16" />
+        开始游戏
+      </span>
+    </a>
 
     <!-- 骨架屏 -->
     <div v-if="store.reposLoading && !store.repos.length" class="grid md:grid-cols-2 gap-6">

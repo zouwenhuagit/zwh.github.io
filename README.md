@@ -68,6 +68,7 @@ personal-blog-vue/
 │   ├── router/index.ts            # 路由配置
 │   ├── types/index.ts             # TS 类型定义
 │   └── utils/                     # api.ts（GitHub API）、format.ts（格式化）
+├── public/saltline/index.html     # 自制游戏 Saltline（独立静态页，访问 /saltline/）
 ├── vite.config.ts                 # base: '/zwh.github.io/'，@ 别名指向 src
 └── tailwind.config.js
 ```
